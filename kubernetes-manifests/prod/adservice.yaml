@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: linuxrobotgeek/adservice:latest
+        image: linuxrobotgeek/adservice:sha-46718e7
         ports:
         - containerPort: 9555
         env:
