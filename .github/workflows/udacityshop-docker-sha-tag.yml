@@ -1,4 +1,4 @@
-name: name: Uda'CityShop [sha tag] - Package with Docker
+name: Uda'CityShop [sha tag] - Package with Docker
 
 on:
   push:
