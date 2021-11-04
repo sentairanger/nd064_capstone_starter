@@ -25,6 +25,7 @@ jobs:
           # list of Docker images to use as base name for tags
           images: |
             linuxrobotgeek/frontend
+            linuxrobotgeek/adservice
           # generate Docker tags based on the following events/attributes
           tags: |
             type=sha
@@ -45,6 +46,15 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: src/frontend/
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64
+      -
+        name: Build and push adservice
+        uses: docker/build-push-action@v2
+        with:
+          context: src/adservice/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
