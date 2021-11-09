@@ -52,4 +52,4 @@ jobs:
         with:
           context: src/frontend/
           push: true
-          tags: linuxrobotgeek/adservice-v2:latest
+          tags: linuxrobotgeek/frontend:latest
