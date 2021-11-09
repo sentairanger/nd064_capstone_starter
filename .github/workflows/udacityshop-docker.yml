@@ -33,38 +33,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push Frontend
-        uses: docker/build-push-action@v2
-        with:
-          context: src/frontend
-          file: src/frontend/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: linuxrobotgeek/frontend:latest
-      -
         name: Build and push ProductCatalogService
         uses: docker/build-push-action@v2
         with:
           context: src/productcatalogservice
-          file: src/productcatalogservice/Dockerfile
+          file: src/adservice-v2/Dockerfile
           platforms: linux/amd64
           push: true
           tags: linuxrobotgeek/productcatalogservice:latest
-      -
-        name: Build and push CurrencyService
-        uses: docker/build-push-action@v2
-        with:
-          context: src/currencyservice
-          file: src/currencyservice/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: linuxrobotgeek/currencyservice:latest
-      -
-        name: Build and push Adservice
-        uses: docker/build-push-action@v2
-        with:
-          context: src/adservice
-          file: src/adservice/Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: linuxrobotgeek/adservice:latest
