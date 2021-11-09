@@ -54,7 +54,7 @@ if __name__ == "__main__":
     health_pb2_grpc.add_HealthServicer_to_server(AdServiceV2(), server)
     demo_pb2_grpc.add_AdServiceV2Servicer_to_server(AdServiceV2(), server)
     print("Server starting on port 9556...")
-    server.add_insecurePort("[::]:9556")
+    server.add_insecure_port("[::]:9556")
     # start the server
     server.start()
     # Keep the thread alive
