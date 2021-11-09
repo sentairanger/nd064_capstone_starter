@@ -21,6 +21,7 @@ jobs:
           # list of Docker images to use as base name for tags
           images: |
             linuxrobotgeek/productcatalogservice
+            linuxrobotgeek/currencyservice
           # generate Docker tags based on the following events/attributes
           tags: |
             type=sha
@@ -44,4 +45,11 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64
+      -
+        name: Build and push currencyservice
+        uses: docker/build-push-action@v2
+        with:
+          context: src/currencyservice/
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
