@@ -60,3 +60,10 @@ jobs:
           context: src/currencyservice/
           push: true
           tags: linuxrobotgeek/currencyservice:latest
+      -
+        name: Build and push adservice
+        uses: docker/build-push-action@v2
+        with:
+          context: src/adservice/
+          push: true
+          tags: linuxrobotgeek/adservice:latest
