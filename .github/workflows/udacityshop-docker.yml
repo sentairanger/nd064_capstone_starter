@@ -53,3 +53,10 @@ jobs:
           context: src/frontend/
           push: true
           tags: linuxrobotgeek/frontend:latest
+      -
+        name: Build and push currencyservice
+        uses: docker/build-push-action@v2
+        with:
+          context: src/currencyservice/
+          push: true
+          tags: linuxrobotgeek/currencyservice:latest
