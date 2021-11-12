@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: productcatalogservice
   namespace: prod-2
+spec:
   selector:
     matchLabels:
       app: productcatalogservice
