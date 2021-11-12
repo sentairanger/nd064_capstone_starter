@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: linuxrobotgeek/productcatalogservice:sha-3e0878b
+        image: linuxrobotgeek/productcatalogservice:latest
         ports:
         - containerPort: 3550
         env:
